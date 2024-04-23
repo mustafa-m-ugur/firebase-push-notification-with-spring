@@ -48,7 +48,6 @@ public class DefaultNotificationService implements NotificationService {
         optionalNotificationModel.ifPresent(notificationModel -> {
             notificationModel.setTitle(notificationDTO.getTitle());
             notificationModel.setDescription(notificationDTO.getDescription());
-            //notificationModel.setIsRead(false);
             notificationRepository.save(notificationModel);
         });
 

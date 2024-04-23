@@ -39,12 +39,12 @@ public class NotificationController {
         notificationService.deleteNotification(id);
     }
 
-    @PostMapping("/sendNotification")
+    @PostMapping("/sendNotification/{id}")
     public Object sendNotification(@PathVariable Long id, @RequestParam String deviceToken) throws IOException, InterruptedException {
         return notificationService.sendNotification(id, List.of(deviceToken));
     }
 
-    @PostMapping("/sendAllAccountNotification")
+    @PostMapping("/sendAllAccountNotification/{id}")
     public Object sendAllAccountNotification(@PathVariable Long id) throws IOException, InterruptedException {
         return notificationService.sendAllAccountNotification(id);
     }
